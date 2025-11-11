@@ -30,6 +30,13 @@ public class Dictionnary {
   }
 
   /**
+   * size.
+   */
+  public int size() {
+    return this.words.size();
+  }
+
+  /**
    * get from dict.
    */
   public String get(final String word) {
@@ -43,6 +50,9 @@ public class Dictionnary {
    * get random from dict.
    */
   public String getRandom() {
+    if (this.dict.isEmpty()) {
+      return "";
+    }
     return this.words.get(random.nextInt(this.words.size()));
   }
 }

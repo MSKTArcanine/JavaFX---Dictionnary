@@ -9,5 +9,14 @@
             "isAsync": true
         }
         ]
-    }
+    },
+  "editor.detectIndentation": false,
+  "[java]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true
+},
+"editor.formatOnSave": true
+
 }
