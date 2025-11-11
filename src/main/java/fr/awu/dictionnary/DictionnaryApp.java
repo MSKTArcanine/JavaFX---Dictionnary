@@ -10,6 +10,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
+import atlantafx.base.theme.PrimerDark;
+
 /**
  * Main app.
  */
@@ -19,6 +21,9 @@ public class DictionnaryApp extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
+    Application
+        .setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
+
     Button btn1 = new Button("Add");
     Button btn2 = new Button("Random");
     Region spacerL = new Region();
