@@ -1,13 +1,19 @@
 package fr.awu.dictionnary;
 
-public class SystemInfo {
+/**
+ * jsaipo.
+ */
+public final class SystemInfo {
 
-    public static String javaVersion() {
-        return System.getProperty("java.version");
-    }
+  private SystemInfo() {
+    // Prevent instantiation
+  }
 
-    public static String javafxVersion() {
-        return System.getProperty("javafx.version");
-    }
+  public static String javaVersion() {
+    return System.getProperty("java.version");
+  }
 
+  public static String javafxVersion() {
+    return System.getProperty("javafx.version");
+  }
 }

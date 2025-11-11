@@ -1,0 +1,13 @@
+{
+    "java.checkstyle.configuration": "/google_checks.xml",
+    "emeraldwalk.runonsave": {
+        "commands": [
+        {
+            "match": "\\.java$",
+            "cmd": "find src/main/java -name '*.java' | entr -r mvn -q -DskipTests -Dpmd.printFailingErrors=true pmd:check",
+            "runIn": "terminal",
+            "isAsync": true
+        }
+        ]
+    }
+}

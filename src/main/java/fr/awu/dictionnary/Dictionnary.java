@@ -2,29 +2,47 @@ package fr.awu.dictionnary;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
+/**
+ * Dictionnary class.
+ **/
 public class Dictionnary {
-    private HashMap<String, String> dictionnary;
-    private ArrayList<String> words;
-    private Random random = new Random();
+  private final Map<String, String> dict;
+  private final List<String> words;
+  private final Random random = new Random();
 
-    public Dictionnary() {
-        this.dictionnary = new HashMap<>();
-    }
+  public Dictionnary() {
+    this.dict = new HashMap<>();
+    this.words = new ArrayList<>();
+  }
 
-    public void add(String w, String t){
-        if(!this.words.contains(w)) this.words.add(w);
-        this.dictionnary.put(w, t);
+  /**
+   * Add to dict.
+   */
+  public void add(final String word, final String translate) {
+    if (!this.words.contains(word)) {
+      this.words.add(word);
     }
+    this.dict.put(word, translate);
+  }
 
-    public String get(String w) throws Exception{
-        if(!this.dictionnary.containsKey(w)) throw new IllegalArgumentException("Word doesn't exist");
-        return this.dictionnary.get(w);
+  /**
+   * get from dict.
+   */
+  public String get(final String word) {
+    if (!this.dict.containsKey(word)) {
+      throw new IllegalArgumentException("Word doesn't exist");
     }
+    return this.dict.get(word);
+  }
 
-    public String getRandom(){
-        return this.words.get(random.nextInt(this.words.size()));
-    }
-    
+  /**
+   * get random from dict.
+   */
+  public String getRandom() {
+    return this.words.get(random.nextInt(this.words.size()));
+  }
 }

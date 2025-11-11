@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns="https://pmd.github.io/pmd-7.0.0/ruleset" name="Project rules">
+  <description>Local PMD rules for this project.</description>
+
+  <!-- catégories “générales” -->
+  <rule ref="category/java/bestpractices.xml" />
+  <rule ref="category/java/errorprone.xml" />
+  <rule ref="category/java/performance.xml" />
+  <rule ref="category/java/codestyle.xml">
+    <!-- tes exclusions éventuelles -->
+    <exclude name="UseExplicitTypes" />
+    <exclude name="LocalVariableCouldBeFinal" />
+    <exclude name="MethodArgumentCouldBeFinal" />
+    <exclude name="ShortClassName" />
+    <exclude name="AtLeastOneConstructor" />
+  </rule>
+
+  <!-- Design -->
+  <rule ref="category/java/design.xml" />
+
+  <!-- CONFIG spécifique : bannir certains packages -->
+  <rule ref="category/java/design.xml/LoosePackageCoupling">
+    <properties>
+      <!-- virgule = liste ; le point final inclut les sous-packages -->
+      <property name="packages" value="java.awt.,javax.swing.,sun.,com.sun." />
+    </properties>
+  </rule>
+</ruleset>
